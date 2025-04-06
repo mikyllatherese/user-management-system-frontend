@@ -1,0 +1,27 @@
+{
+  "name": "user-management-system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikyllatherese/user-management-system.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mikyllatherese/user-management-system/issues"
+  },
+  "homepage": "https://github.com/mikyllatherese/user-management-system#readme",
+  "dependencies": {
+    "@angular/core": "^19.2.5",
+    "@angular/forms": "^19.2.5",
+    "@angular/platform-browser-dynamic": "^19.2.5",
+    "@angular/router": "^19.2.5",
+    "rxjs": "^7.8.2"
+  }
+}
