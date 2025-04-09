@@ -3,13 +3,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
-<<<<<<< HEAD
 import { AccountService, AlertService } from '../../app/_services';
 import { MustMatch } from '../../app/_helpers';
-=======
-import { AccountService, AlertService } from '@app/_services';
-import { MustMatch } from '@app/_helpers';
->>>>>>> Dinauanao-tester-functional-testing
 
 @Component({ templateUrl: 'register.component.html' })
 export class RegisterComponent implements OnInit {
@@ -23,11 +18,7 @@ export class RegisterComponent implements OnInit {
         private router: Router,
         private accountService: AccountService,
         private alertService: AlertService
-<<<<<<< HEAD
     ) { }
-=======
-    ) {}
->>>>>>> Dinauanao-tester-functional-testing
 
     ngOnInit() {
         this.form = this.formBuilder.group({
@@ -62,11 +53,7 @@ export class RegisterComponent implements OnInit {
             .pipe(first())
             .subscribe({
                 next: () => {
-<<<<<<< HEAD
                     this.alertService.success('Registration successful, please check your email for verification instructions', { keepAfterRouteChange: true });
-=======
-                    this.alertService.success('Registration successful', { keepAfterRouteChange: true });
->>>>>>> Dinauanao-tester-functional-testing
                     this.router.navigate(['../login'], { relativeTo: this.route });
                 },
                 error: error => {
@@ -75,8 +62,4 @@ export class RegisterComponent implements OnInit {
                 }
             });
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> Dinauanao-tester-functional-testing

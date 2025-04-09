@@ -2,11 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { first, finalize } from 'rxjs/operators';
 
-<<<<<<< HEAD
 import { AccountService, AlertService } from '../../app/_services';
-=======
-import { AccountService, AlertService } from '@app/_services';
->>>>>>> Dinauanao-tester-functional-testing
 
 @Component({ templateUrl: 'forgot-password.component.html' })
 export class ForgotPasswordComponent implements OnInit {
@@ -18,11 +14,7 @@ export class ForgotPasswordComponent implements OnInit {
         private formBuilder: UntypedFormBuilder,
         private accountService: AccountService,
         private alertService: AlertService
-<<<<<<< HEAD
     ) { }
-=======
-    ) {}
->>>>>>> Dinauanao-tester-functional-testing
 
     ngOnInit() {
         this.form = this.formBuilder.group({
@@ -50,11 +42,7 @@ export class ForgotPasswordComponent implements OnInit {
             .pipe(first())
             .pipe(finalize(() => this.loading = false))
             .subscribe({
-<<<<<<< HEAD
                 next: () => this.alertService.success('Please check your email for password reset instructions'),
-=======
-                next: () => this.alertService.success('Password reset email sent, please check your inbox'),
->>>>>>> Dinauanao-tester-functional-testing
                 error: error => this.alertService.error(error)
             });
     }

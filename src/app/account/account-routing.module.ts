@@ -10,12 +10,7 @@ import { ResetPasswordComponent } from './reset-password.component';
 
 const routes: Routes = [
     {
-<<<<<<< HEAD
         path: '', component: LayoutComponent,
-=======
-        path: '', 
-        component: LayoutComponent,
->>>>>>> Dinauanao-tester-functional-testing
         children: [
             { path: 'login', component: LoginComponent },
             { path: 'register', component: RegisterComponent },
