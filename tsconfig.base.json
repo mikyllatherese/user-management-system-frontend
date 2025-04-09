@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./", // Change this to "src"
@@ -22,28 +21,4 @@
       "dom"
     ]
   }
-=======
-    "compileOnSave": false,
-    "compilerOptions": {
-        "baseUrl": "./src",
-        "outDir": "./dist/out-tsc",
-        "sourceMap": true,
-        "declaration": false,
-        "downlevelIteration": true,
-        "experimentalDecorators": true,
-        "moduleResolution": "node",
-        "importHelpers": true,
-        "target": "es2015",
-        "module": "esnext",
-        "lib": [
-            "es2018",
-            "dom"
-        ],
-        "paths": {
-            "@app/*": ["src/app/*" ],
-            "@environments/*": ["src/environments/*" ],
-        }
-        
-    }
->>>>>>> Dinauanao-tester-functional-testing
 }
