@@ -6,7 +6,6 @@ import { DetailsComponent } from './details.component';
 import { UpdateComponent } from './update.component';
 
 const routes: Routes = [
-<<<<<<< HEAD
   {
     path: '', component: LayoutComponent,
     children: [
@@ -14,15 +13,6 @@ const routes: Routes = [
       { path: 'update', component: UpdateComponent }
     ]
   }
-=======
-    {
-        path: '', component: LayoutComponent,
-        children: [
-            { path: '', component: DetailsComponent },
-            { path: 'update', component: UpdateComponent }
-        ]
-    }
->>>>>>> Dinauanao-tester-functional-testing
 ];
 
 @NgModule({
