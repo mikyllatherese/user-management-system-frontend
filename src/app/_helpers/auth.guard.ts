@@ -1,11 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 
-<<<<<<< HEAD
 import { AccountService } from '../../app/_services';
-=======
-import { AccountService } from '../_services';
->>>>>>> Dinauanao-tester-functional-testing
 
 @Injectable({ providedIn: 'root' })
 export class AuthGuard {
@@ -29,11 +25,7 @@ export class AuthGuard {
         }
 
         // not logged in so redirect to login page with the return url
-<<<<<<< HEAD
         this.router.navigate(['/account/login'], { queryParams: { returnUrl: state.url } });
-=======
-        this.router.navigate(['/account/login'], { queryParams: { returnUrl: state.url }});
->>>>>>> Dinauanao-tester-functional-testing
         return false;
     }
 }
