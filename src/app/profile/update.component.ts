@@ -3,12 +3,21 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
+<<<<<<< HEAD
 import { AccountService, AlertService } from '../../app/_services';
 import { MustMatch } from '../../app/_helpers';
 
 @Component({ templateUrl: 'update.component.html' })
 export class UpdateComponent implements OnInit {
     account: any;
+=======
+import { AccountService, AlertService } from '@app/_services';
+import { MustMatch } from '@app/_helpers';
+
+@Component({ templateUrl: 'update.component.html' })
+export class UpdateComponent implements OnInit {
+    account = this.accountService.accountValue;
+>>>>>>> Dinauanao-tester-functional-testing
     form: UntypedFormGroup;
     loading = false;
     submitted = false;
@@ -23,7 +32,10 @@ export class UpdateComponent implements OnInit {
     ) { }
 
     ngOnInit() {
+<<<<<<< HEAD
         this.account = this.accountService.accountValue;
+=======
+>>>>>>> Dinauanao-tester-functional-testing
         this.form = this.formBuilder.group({
             title: [this.account.title, Validators.required],
             firstName: [this.account.firstName, Validators.required],
@@ -39,6 +51,7 @@ export class UpdateComponent implements OnInit {
     // convenience getter for easy access to form fields
     get f() { return this.form.controls; }
 
+<<<<<<< HEAD
     onSubmit() {
         this.submitted = true;
 
@@ -74,5 +87,42 @@ export class UpdateComponent implements OnInit {
                     this.alertService.success('Account deleted successfully', { keepAfterRouteChange: true });
                 });
         }
+=======
+onSubmit() {
+    this.submitted = true;
+
+    // reset alerts on submit
+    this.alertService.clear();
+
+    // stop here if form is invalid
+    if (this.form.invalid) {
+        return;
+    }
+
+    this.loading = true;
+    this.accountService.update(this.account.id, this.form.value)
+        .pipe(first())
+        .subscribe({
+            next: () => {
+                this.alertService.success('Update successful', { keepAfterRouteChange: true });
+                this.router.navigate(['../'], { relativeTo: this.route });
+            },
+            error: error => {
+                this.alertService.error(error);
+                this.loading = false;
+            }
+        });
+}
+
+onDelete() {
+    if (confirm('Are you sure?')) {
+        this.deleting = true;
+        this.accountService.delete(this.account.id)
+            .pipe(first())
+            .subscribe(() => {
+                this.alertService.success('Account deleted successfully', { keepAfterRouteChange: true });
+            });
+         }
+>>>>>>> Dinauanao-tester-functional-testing
     }
 }

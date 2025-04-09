@@ -5,10 +5,17 @@
       <label>Title</label>
       <select formControlName="title" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.title.errors }">
         <option value=""></option>
+<<<<<<< HEAD
         <option value="Mr">Mr</option>
         <option value="Mrs">Mrs</option>
         <option value="Miss">Miss</option>
         <option value="Ms">Ms</option>
+=======
+        <option value="Mr.">Mr.</option>
+        <option value="Mrs.">Mrs.</option>
+        <option value="Miss">Miss</option>
+        <option value="Ms.">Ms.</option>
+>>>>>>> Dinauanao-tester-functional-testing
       </select>
       <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
         <div *ngIf="f.title.errors.required">Title is required</div>
@@ -29,16 +36,25 @@
       </div>
     </div>
   </div>
+<<<<<<< HEAD
 
   <div class="form-group">
     <label>Email</label>
     <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+=======
+  <div class="form-group">
+    <label>Email</label>
+    <input type="email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+>>>>>>> Dinauanao-tester-functional-testing
     <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
       <div *ngIf="f.email.errors.required">Email is required</div>
       <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
     </div>
   </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> Dinauanao-tester-functional-testing
   <h3 class="pt-3">Change Password</h3>
   <p>Leave blank to keep the same password</p>
   <div class="form-row">
@@ -59,7 +75,10 @@
       </div>
     </div>
   </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> Dinauanao-tester-functional-testing
   <div class="form-group">
     <button type="submit" [disabled]="loading" class="btn btn-primary mr-2">
       <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
@@ -69,6 +88,12 @@
       <span *ngIf="deleting" class="spinner-border spinner-border-sm mr-1"></span>
       Delete
     </button>
+<<<<<<< HEAD
     <a routerLink="../" href="" class="btn btn-link">Cancel</a>
   </div>
 </form>
+=======
+    <a routerLink="../" class="btn btn-link">Cancel</a>
+  </div>
+</form>
+>>>>>>> Dinauanao-tester-functional-testing

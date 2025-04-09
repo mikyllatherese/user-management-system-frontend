@@ -3,7 +3,11 @@ import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor } from '@angular/c
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
+<<<<<<< HEAD
 import { AccountService } from '../../app/_services';
+=======
+import { AccountService } from '../_services';
+>>>>>>> Dinauanao-tester-functional-testing
 
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
@@ -19,6 +23,12 @@ export class ErrorInterceptor implements HttpInterceptor {
             const error = (err && err.error && err.error.message) || err.statusText;
             console.error(err);
             return throwError(error);
+<<<<<<< HEAD
         }));
     }
 }
+=======
+        }))
+    }
+}
+>>>>>>> Dinauanao-tester-functional-testing

@@ -25,4 +25,8 @@ import { ResetPasswordComponent } from './reset-password.component';
         ResetPasswordComponent
     ]
 })
+<<<<<<< HEAD
 export class AccountModule { }
+=======
+export class AccountModule { }  
+>>>>>>> Dinauanao-tester-functional-testing

@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
 import { Subscription } from 'rxjs';
 
+<<<<<<< HEAD
 import { Alert, AlertType } from '../../app/_models';
 import { AlertService } from '../../app/_services';
 
@@ -16,6 +17,22 @@ export class AlertComponent implements OnInit, OnDestroy {
 
     constructor(private router: Router, private alertService: AlertService) { }
 
+=======
+import { Alert, AlertType } from '@app/_models';
+import { AlertService } from '@app/_services';
+
+@Component ({ selector: 'alert', templateUrl: 'alert.component.html' })
+export class AlertComponent implements OnInit, OnDestroy {
+    @Input() id = 'default-alert'; // used for css styling
+    @Input() fade = true; // fade effect on alert close
+
+    alerts: Alert[] = [];
+    alertSubscription: Subscription;
+    routeSubscription: Subscription;
+
+    constructor(private router: Router, private alertService: AlertService) {}
+    
+>>>>>>> Dinauanao-tester-functional-testing
     ngOnInit() {
         // subscribe to new alert notifications
         this.alertSubscription = this.alertService.onAlert(this.id)
@@ -40,6 +57,7 @@ export class AlertComponent implements OnInit, OnDestroy {
             });
 
         // clear alerts on location change
+<<<<<<< HEAD
         this.routerSubscription = this.router.events.subscribe(event => {
             if (event instanceof NavigationStart) {
                 this.alertService.clear(this.id);
@@ -55,22 +73,50 @@ export class AlertComponent implements OnInit, OnDestroy {
 
     removeAlert(alert: Alert) {
         // check if already removed to prevent error on auto close
+=======
+        this.routeSubscription = this.router.events.subscribe(event => {
+            if (event instanceof NavigationStart) {
+                this.alertService.clear(this.id);
+            }
+        });
+    }
+    ngOnDestroy() {
+        // unsubscribe to avoid memory leaks
+        this.alertSubscription.unsubscribe();
+        this.routeSubscription.unsubscribe();
+    }
+
+    removeAlert(alert: Alert) {
+        //check if already removed to prevent error on auto close
+>>>>>>> Dinauanao-tester-functional-testing
         if (!this.alerts.includes(alert)) return;
 
         if (this.fade) {
             // fade out alert
+<<<<<<< HEAD
             alert.fade = true;
+=======
+            this.fade = true;
+>>>>>>> Dinauanao-tester-functional-testing
 
             // remove alert after faded out
             setTimeout(() => {
                 this.alerts = this.alerts.filter(x => x !== alert);
             }, 250);
+<<<<<<< HEAD
         } else {
+=======
+        }else {
+>>>>>>> Dinauanao-tester-functional-testing
             // remove alert
             this.alerts = this.alerts.filter(x => x !== alert);
         }
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> Dinauanao-tester-functional-testing
     cssClasses(alert: Alert) {
         if (!alert) return;
 
@@ -81,14 +127,28 @@ export class AlertComponent implements OnInit, OnDestroy {
             [AlertType.Error]: 'alert alert-danger',
             [AlertType.Info]: 'alert alert-info',
             [AlertType.Warning]: 'alert alert-warning'
+<<<<<<< HEAD
         };
 
         classes.push(alertTypeClass[alert.type]);
 
         if (alert.fade) {
+=======
+        }
+
+        classes.push(alertTypeClass[alert.type]);
+
+        if (alert.fade){
+>>>>>>> Dinauanao-tester-functional-testing
             classes.push('fade');
         }
 
         return classes.join(' ');
     }
+<<<<<<< HEAD
 }
+=======
+}
+
+
+>>>>>>> Dinauanao-tester-functional-testing
